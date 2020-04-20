@@ -21,7 +21,7 @@ List countryData;
 List stateData;
 class _HomePageState extends State<HomePage> {
   getData() async{
-    http.Response _response = await http.get("https://corona.lmao.ninja/all");
+    http.Response _response = await http.get("https://corona.lmao.ninja/v2/all");
     setState(() {
       
       worldData = jsonDecode(_response.body);
@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
   
  
   getCountryData() async{
-    http.Response _response = await http.get("https://corona.lmao.ninja/countries");
+    http.Response _response = await http.get("http://corona.lmao.ninja/v2/countries?sort=deaths");
     setState(() {
       
       countryData = jsonDecode(_response.body);
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
   }
   Map indiaData;
   getIndiaData() async{
-    http.Response _response = await http.get("https://corona.lmao.ninja/countries/india");
+    http.Response _response = await http.get("https://corona.lmao.ninja/v2/countries/India");
     setState(() {
       
       indiaData = jsonDecode(_response.body);
@@ -137,6 +137,9 @@ class _HomePageState extends State<HomePage> {
                   children: <Widget>[
   
                   Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30)
+                    ),
   
                     child: Column(
   

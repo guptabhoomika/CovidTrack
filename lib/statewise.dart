@@ -62,28 +62,33 @@ class _StateDataState extends State<StateData> {
               decoration: BoxDecoration(color: Colors.white,boxShadow: [
                 BoxShadow(color: Colors.grey[100],blurRadius: 10,offset: Offset(0,10)),
                 
-              ]),
+              ],
+              borderRadius: BorderRadius.circular(0)
+              ),
               child: Row(children: <Widget>[
                
                 
                 Expanded(child: Container(
                   
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                       Text(countryData[index]['name'],style: TextStyle(fontWeight:  FontWeight.bold,fontSize: 15),),
-                       SizedBox(height: 10,),
-                        Text('CONFIRMED:' + countryData[index]['cases'].toString(),style: TextStyle(fontWeight: FontWeight.bold,color: Colors.red,),),
-                        //Text('ACTIVE:' + countryData[index]['active'].toString(),style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blue),),
-                        Text('RECOVERED:' + countryData[index]['recovered'].toString(),style: TextStyle(fontWeight: FontWeight.bold,color: Colors.green),),
-                        Text('DEATHS:' + countryData[index]['deaths'].toString(),style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey[800],),),
-                      //  countryData[index]['todayCases']==0 ? Container() : Column(
-                      //     children: <Widget>[
-                      //       Text('+ ' + countryData[index]['todayCases'].toString() +' cases today',style: TextStyle(color: Colors.red,fontWeight: FontWeight.w800),),
-                      //       Text('+ ' + countryData[index]['todayDeaths'].toString() +' deathes today',style: TextStyle(color: Colors.grey[800],fontWeight: FontWeight.w800),),
-                      //     ],
-                      //   )
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                         Text(countryData[index]['name'],style: TextStyle(fontWeight:  FontWeight.bold,fontSize: 15),),
+                         SizedBox(height: 10,),
+                          Text('CONFIRMED:' + countryData[index]['cases'].toString(),style: TextStyle(fontWeight: FontWeight.bold,color: Colors.red,),),
+                          //Text('ACTIVE:' + countryData[index]['active'].toString(),style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blue),),
+                          Text('RECOVERED:' + countryData[index]['recovered'].toString(),style: TextStyle(fontWeight: FontWeight.bold,color: Colors.green),),
+                          Text('DEATHS:' + countryData[index]['deaths'].toString(),style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey[800],),),
+                        //  countryData[index]['todayCases']==0 ? Container() : Column(
+                        //     children: <Widget>[
+                        //       Text('+ ' + countryData[index]['todayCases'].toString() +' cases today',style: TextStyle(color: Colors.red,fontWeight: FontWeight.w800),),
+                        //       Text('+ ' + countryData[index]['todayDeaths'].toString() +' deathes today',style: TextStyle(color: Colors.grey[800],fontWeight: FontWeight.w800),),
+                        //     ],
+                        //   )
+                      ],
+                    ),
                   ),
                 ))
               ],),

@@ -10,7 +10,7 @@ class Country extends StatefulWidget {
 class _CountryState extends State<Country> {
   List countryData;
    getCountryData() async{
-    http.Response _response = await http.get("https://corona.lmao.ninja/countries");
+    http.Response _response = await http.get("https://corona.lmao.ninja/v2/countries?sort=deaths");
     setState(() {
       
       countryData = jsonDecode(_response.body);
